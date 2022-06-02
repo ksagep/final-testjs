@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script defer src="assets/js/script.js"></script>
+    <script src="https://kit.fontawesome.com/c7dbda0798.js"></script>
+    <title>Quiz App</title>
+</head>
+<body>
+    <header class="heading">
+        <div>
+            <img src="assets/images/coffee-biins-dec.jpg" alt="like to coffee beans" class="front-image-left">
+        </div>
+        <h1 >Coffee Quiz</h1>
+        <div>
+            <img src="assets/images/coffee-is-ready.jpg" alt="five minutes break with coffee" class="front-image-right">
+        </div>
+    </header>
+    
+    <div class="container">
+        <div id="question-container" class="hide"></div>
+            <div id="question">Question</div>
+            <div id="answer-buttons" class="btn-grid">
+                <button class="btn">Answer 1</button>
+                <button class="btn">Answer 2</button>
+                <button class="btn">Answer 3</button>
+                <button class="btn">Answer 4</button>
+            </div>
+        <div class="controls">
+            <button id="start-btn" class="start-btn btn">Start</button>
+            <button id="next-btn" class="next-btn btn hide">Next</button>
+        </div>
+        <div id="scores"><span>Score:</span> 0/10</div>
+    </div>
+    <div class="result-box" id="score-page">
+        <div>
+            <h2 id="end-result">Your result:</h2>
+            <h3 id="last-message"></h3>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="social-network">
+        <a href="https://github.com" target="_blank" rel="noopener"
+        aria-label="Visit my Github page (open in a new tab)"><i class="fab fa-github-square"></i></a>
+        <a href="https://facebook.com" target="_blank" rel="noopener"
+        aria-label="Visit my Facebook page (open in a new tab)"><i class="fab fa-facebook-square"></i></a>
+        <p>&copy; 2022</p>
+        <p>Coffee Quiz</p>
+    </footer>  
+</body>
+</html>

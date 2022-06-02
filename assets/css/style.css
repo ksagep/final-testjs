@@ -1,0 +1,149 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+:root {
+    --hue-neutral: 200;
+    --hue-correct: 145;
+    --hue-wrong: 0;
+}
+
+body {
+    --hue: var(--hue-neutral);
+    padding: 0;
+    margin: 0;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(var(--hue), 100%, 20%);
+}
+
+body.correct {
+    --hue: var(--hue-correct);
+}
+
+body.wrong {
+    --hue: var(--hue-wrong);
+}
+
+.container {
+    width: 800px;
+    max-width: 80%;
+    text-align: center;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px 2px;
+}
+
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.btn {
+    --hue: var(--hue-neutral);
+    border: 1px solid hsl(var(--hue), 100%, 30%);
+    background-color: hsl(var(--hue), 100%, 50%);
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: white;
+    outline: none;
+}
+
+.btn:hover {
+    border-color: black;
+}
+
+.btn.correct {
+    --hue: var(--hue-correct);
+    color: black;
+}
+
+.btn.wrong {
+    --hue: var(--hue-wrong);
+}
+
+/* heading */
+
+.heading {
+    font-size: 25px;
+    text-align: center;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    width: 800px;
+}
+
+.front-image-left {    
+    float: left;
+    padding-bottom: 70px;    
+}
+
+.front-image-right {
+    float: right;
+    padding-bottom: 70px;    
+       
+}
+
+.start-btn, .next-btn {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+#start-button {
+    color: white;
+    margin: 25px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hide {
+    display: none;
+}
+
+/* cover text */
+
+#cover-text {
+    color: #0a0a0a;
+    font-size: 80%;
+    font-family: Raleway;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    width: 800px;
+}
+
+.scores {
+    text-align: center;
+}
+
+footer {
+    height: 100px;        
+}
+
+.social-network {
+    text-align: center;
+    align-items: center;
+}
+
+.social-network > li {
+    display: inline;
+}
+
+.social-network i {
+    font-size: 160%;
+    margin: 15px;
+    color: black;
+}
