@@ -5,12 +5,6 @@ const questionElement = document.getElementById('question');
 const answerButtonsElement = document.getElementById('answer-buttons');
 
 let shuffledQuestions, currentQuestionIndex;
-let scorenumbers = document.getElementById('scores');
-let endresult = document.getElementById('end-result');
-let lastMessage = document.getElementById('last-message');
-
-let scores = 0;
-let counter;
 
 /** Get the button elements and add event listeners to them */
 
@@ -19,6 +13,7 @@ nextButton.addEventListener('click', () => {
   currentQuestionIndex++;
   setNextQuestion();
 });
+resultButton.addEventListener('click', endGame);
 
 function startGame() {
     startButton.classList.add('hide');
@@ -33,11 +28,6 @@ function setNextQuestion() {
     resetState();
     showQuestion(shuffledQuestions[currentQuestionIndex]);
     
-    console.log('answer', selectAnswer);
-    console.log('show question length', showQuestion.length);
-    console.log('shuffled questions length', shuffledQuestions.length);
-    console.log('attempted questions', attemptedQuestions);
-
     if (currentQuestionIndex +1 < shuffledQuestions.length) {
       checkAnswer(); 
       showQuestion();
@@ -108,35 +98,7 @@ function checkAnswer(question) {
   let userAnswer = parseInt(document.getElementById("answer-buttons").innerText);
   let calculatedAnswer = selectAnswer(correct, true);
   let correct = userAnswer === calculatedAnswer;
-  scorepush();
-  scores++;
   setNextQuestion();
-}
-
-/** Gets the correct answers from the DOM and increments it by 1 */
-
-function scorepush() {
-  scorenumbers.innerHTML = `Score: ${scores}/10`;
-}
-
-function gameover() {
-  console.log('Finished the game');
-  clearInterval(counter);
-  endscore();
-}
-
-function endscore() {
-  console.log('Shows the results');
-  endresult.innerText = `Your result: ${scores}/10`;
-  if(scores<=5){
-    lastMessage.innerText="I think you can do this better! Drink another coffee!";
-  }
-  else if(scores >5 && scores <= 9){    
-    lastMessage.innerText="You know some important things.";
-  }
-  else if(scores === 10){
-    lastMessage.innerText="Congratulations! You are a real coffee fan!";
-  }
 }
 
 const questions = [
